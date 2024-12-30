@@ -9,7 +9,7 @@ export default function intro() {
         <div className="flex-auto p-6">
             <div className="flex flex-wrap">
             <h1 className="flex-auto text-lg font-semibold text-stone-900">
-                "Hi, I'm Jake"
+                Hi, I&apos;m Jake
             </h1>
             <div className="w-full flex-none text-sm font-medium text-slate-700 mt-2">
                 and this is my website. 
