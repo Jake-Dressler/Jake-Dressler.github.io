@@ -1,3 +1,3 @@
-My next js page
+WIP
 
 https://jake-dressler.github.io/ 
