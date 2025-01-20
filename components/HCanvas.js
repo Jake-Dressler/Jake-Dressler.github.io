@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { TILE_TYPES, TILE_COLORS, generateTileMap, findGoalBFS, mapHeight, mapWidth } from "/components/bfsLogic";
+import { TILE_TYPES, TILE_COLORS, generateTileMap, findGoalH, mapHeight, mapWidth } from "/components/hLogic";
 
-const BFSCanvas = () => {
+const HCanvas = () => {
   const canvasRef = useRef(null);
   const [tileMap, setTileMap] = useState([]);
   const [playerCoords, setPlayerCoords] = useState([0, 0]);
@@ -18,8 +18,8 @@ const BFSCanvas = () => {
     const map = generateTileMap();
     setTileMap(map);
 
-    const randomPlayer = [Math.ceil(Math.random() * mapHeight - 2), Math.ceil(Math.random() * mapWidth - 2)];
-    const randomGoal = [Math.ceil(Math.random() * mapHeight - 2), Math.ceil(Math.random() * mapWidth - 2)];
+    const randomPlayer = [Math.floor(Math.random() * (mapHeight - 2)), Math.floor(Math.random() * (mapWidth - 2))];
+    const randomGoal = [Math.floor(Math.random() * (mapHeight - 2)), Math.floor(Math.random() * (mapWidth - 2))];
     setPlayerCoords(randomPlayer);
     setGoalCoords(randomGoal);
 
@@ -57,10 +57,10 @@ const BFSCanvas = () => {
     setIsDrawing(true);
     const ctx = canvasRef.current.getContext("2d");
 
-    const { searched, goalPath } = findGoalBFS(playerCoords, goalCoords, tileMap);
+    const { searched, goalPath } = findGoalH(playerCoords, goalCoords, tileMap);
 
     if (!goalPath) {
-      alert("no path found for bfs");
+      alert("no path found for heuristic");
       await drawPathWithDelay(ctx, searched, TILE_COLORS[TILE_TYPES.SEARCH], 5);
     } else {
       await drawPathWithDelay(ctx, searched, TILE_COLORS[TILE_TYPES.SEARCH], 5);
@@ -72,7 +72,7 @@ const BFSCanvas = () => {
 
   return (
     <div>
-      <canvas ref={canvasRef} id="bfsCanvas" width={500} height={500} />
+      <canvas ref={canvasRef} id="hCanvas" width={500} height={500} />
       <button onClick={drawPaths} disabled={isDrawing}>
         {isDrawing ? "Drawing..." : "Start Visualization"}
       </button>
@@ -80,4 +80,4 @@ const BFSCanvas = () => {
   );
 };
 
-export default BFSCanvas;
+export default HCanvas;

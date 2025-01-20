@@ -5,18 +5,20 @@ import Link from 'next/link';
 
 import GridLayout from "react-grid-layout";
 
-class MyFirstGrid extends React.Component {
+class jakeGrid extends React.Component {
   render() {
     // layout is an array of objects, see the demo for more complete usage
     const layout = [
       { i: "stack", x: 0, y: 0, w: 4, h: 6, minW: 4, maxW: 6, minH: 6, maxH: 8 },
       { i: "langs", x: 0, y: 4, w: 4, h: 9, minW: 4, maxW: 6, minH: 9, maxH: 12 },
-      { i: "tiles", x: 8, y: 6, w: 4, h: 11, minW: 4, maxW: 6, minH: 11, maxH: 13 },
+      { i: "textGame", x: 0, y: 8, w: 4, h: 6, minW: 4, maxW: 6, minH: 6, maxH: 8 },
+      { i: "tiles", x: 8, y: 8, w: 4, h: 11, minW: 4, maxW: 6, minH: 11, maxH: 13 },
       { i: "lincoln", x: 4, y: 0, w: 4, h: 12, minW: 4, maxW: 6, minH: 12, maxH: 14},
       { i: "dibujar", x: 4, y: 4, w: 4, h: 6, minW: 4, maxW: 6, minH: 6, maxH: 8 },
       { i: "resume", x: 8, y: 0, w: 4, h: 3, minW: 4, maxW: 6, minH: 3, maxH: 4 },
       { i: "email", x: 8, y: 2, w: 4, h: 3, minW: 4, maxW: 6, minH: 3, maxH: 4 },
-      { i: "linkedin", x: 8, y: 4, w: 4, h: 3, minW: 4, maxW: 6, minH: 3, maxH: 4 }
+      { i: "linkedin", x: 8, y: 4, w: 4, h: 3, minW: 4, maxW: 6, minH: 3, maxH: 4 },
+      { i: "github", x: 8, y: 6, w: 4, h: 3, minW: 4, maxW: 6, minH: 3, maxH: 4 }
     ];
     return (
     <div className="justify-center items-center w-1/2 h-auto py-8">
@@ -46,8 +48,8 @@ class MyFirstGrid extends React.Component {
 
         <div key="langs" className='bg-blue-300 rounded bg-opacity-70'>
           <div className='place-items-center text-stone-900 font-mono font-bold text-2xl pl-4 pr-4'>
-            <h1 className='pl-4 pr-4'>Some of my favorite</h1>
-            <h1 className='pl-4 pr-4'>Skills/Technologies</h1>
+            <h1 className='pl-4 pr-4'>My Favorite</h1>
+            <h1 className='pl-4 pr-4'>Technologies</h1>
           </div>
           <div className='justify-center flex pt-4'>
             <Image priority src="/images/java.png" className='mr-1 ml-1' height={75} width={75} alt=""></Image>
@@ -60,9 +62,17 @@ class MyFirstGrid extends React.Component {
           </div>
           <div className='justify-center flex pt-4'>
             <Image priority src="/images/docker.png" className='mr-1 ml-1' height={75} width={75} alt=""></Image>
-            <Image priority src="/images/placeholder_icon.png" className='mr-1 ml-1' height={75} width={75} alt=""></Image>
+            <Image priority src="/images/github.svg" className='mr-1 ml-1' height={75} width={75} alt=""></Image>
             <Image priority src="/images/placeholder_icon.png" className='mr-1 ml-1' height={75} width={75} alt=""></Image>
           </div>
+        </div>
+
+        <div key="textGame" className='bg-blue-300 rounded bg-opacity-70'>
+          <div className='place-items-center'>
+            <h1 className='text-stone-900 font-mono font-bold text-2xl'>Text Based Game</h1>
+            <p className='text-stone-900 font-mono pt-2 pr-2 pl-2'>A JS based text game in its early stages featuring random world generation. Built from scratch with a modular design focusing on flexibility using OOP.</p>
+          </div>
+          <Link href="https://jake-dressler.github.io/textGamePreAlpha/" className='no-drag text-stone-900 font-mono font-bold underline pt-2 pr-2 pl-2'>Check it out</Link>
         </div>
 
         <div key="tiles" className='bg-blue-300 rounded bg-opacity-70'>
@@ -86,29 +96,44 @@ class MyFirstGrid extends React.Component {
         <div key="dibujar" className='bg-blue-300 rounded bg-opacity-70'>
           <div className='place-items-center'>
             <h1 className='text-stone-900 font-mono font-bold text-2xl'>Dibujar Don Quixote</h1>
-            <p className='text-stone-900 font-mono pt-2 pr-2 pl-2'>A final project for one of my spanish classes. This site features a basic vector based drawing tool which allows users to submit drawings which are then on the server.</p>
+            <p className='text-stone-900 font-mono pt-2 pr-2 pl-2'>A final project for one of my spanish classes. This site features a basic vector based drawing tool which allows users to submit drawings which are then stored on the server.</p>
           </div>
           <Link href="https://dibujardq.sites.gettysburg.edu/index.html" className='no-drag text-stone-900 font-mono font-bold underline pt-2 pr-2 pl-2'>Check it out</Link>
         </div>
 
-        <div key="resume" className='bg-blue-300 rounded bg-opacity-70'>
-          <div className='place-items-center justify-center'>
-          <h1 className='text-stone-900 font-mono font-bold text-2xl'>My resume</h1>
-            <a href='/files/DresslerResume.pdf'><button className="no-drag bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">My resume</button></a>
+        <div key="resume" className='bg-blue-300 rounded bg-opacity-70 flex items-center justify-center'>
+          <div className='flex items-center space-x-4'>
+            <h1 className='text-stone-900 font-mono font-bold text-2xl'>My resume: </h1>
+            <a className='no-drag' href='/files/DresslerResume.pdf'>
+              <Image priority src="/images/resume.svg" className='no-drag' height={50} width={50} alt=""></Image>
+            </a>
           </div>
         </div>
 
-        <div key="email" className='bg-blue-300 rounded bg-opacity-70'>
-          <div className='place-items-center content-center'>
-            <h1 className='text-stone-900 font-mono font-bold text-2xl'>Email me</h1>
-            <a href='mailto:jakedressler.jd@yahoo.com'><button className="no-drag bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Button</button></a>
+        <div key="email" className='bg-blue-300 rounded bg-opacity-70 flex items-center justify-center'>
+          <div className='flex items-center space-x-4'>
+            <h1 className='text-stone-900 font-mono font-bold text-2xl'>Email me: </h1>
+            <a className='no-drag' href='mailto:jakedressler.jd@yahoo.com'>
+              <Image priority src="/images/email.svg" className='no-drag' height={75} width={75} alt=""></Image>
+            </a>
           </div>
         </div>
 
-        <div key="linkedin" className='bg-blue-300 rounded bg-opacity-70'>
-          <div className='place-items-center'>
-            <h1 className='text-stone-900 font-mono font-bold text-2xl '>My LinkedIn</h1>
-            <a href='www.linkedin.com/in/jake-dressler-049ab2276'><button className="no-drag bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Button</button></a>
+        <div key="linkedin" className='bg-blue-300 rounded bg-opacity-70 flex items-center justify-center'>
+          <div className='flex items-center space-x-4'>
+            <h1 className='text-stone-900 font-mono font-bold text-2xl '>My LinkedIn: </h1>
+            <a className='no-drag' href='https://www.linkedin.com/in/jake-dressler-049ab2276'>
+              <Image priority src="/images/linkedin.png" className='no-drag' height={75} width={75} alt=""></Image>
+            </a>
+          </div>
+        </div>
+
+        <div key="github" className='bg-blue-300 rounded bg-opacity-70 flex items-center justify-center'>
+          <div className='flex items-center space-x-4'>
+            <h1 className='text-stone-900 font-mono font-bold text-2xl '>My GitHub: </h1>
+            <a className='no-drag' href='https://github.com/Jake-Dressler'>
+              <Image priority src="/images/github.svg" className='no-drag' height={75} width={75} alt=""></Image>
+            </a>
           </div>
         </div>
 
@@ -118,4 +143,4 @@ class MyFirstGrid extends React.Component {
   }
 }
 
-export default MyFirstGrid;
+export default jakeGrid;

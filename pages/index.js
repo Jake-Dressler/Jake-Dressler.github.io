@@ -14,7 +14,7 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <Intro></Intro>
-        <JakeGrid></JakeGrid>
+      <JakeGrid></JakeGrid>
     </div>
   );
 }
