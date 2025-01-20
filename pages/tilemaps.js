@@ -32,7 +32,7 @@ export default function tilemaps() {
         </div>
         <div class="bg-blue-300 text-stone-900 p-4">
           <p className="font-bold">Depth First Search</p>
-          <p>Depth first search is fun to watch in its pure form because it can be so chaotic and clearly inefficient. Luckily it turns into a fantastic search with some additions (ie. Dijkstra`&#39;`s, Depth Limited, IDDFS).</p>
+          <p>Depth first search is fun to watch in its pure form because it can be so chaotic and clearly inefficient. Luckily it turns into a fantastic search with some additions (ie. Dijkstra&#39;s, Depth Limited, IDDFS).</p>
           <DFSCanvas></DFSCanvas>
         </div>
         <div class="bg-blue-300 text-stone-900 p-4">
