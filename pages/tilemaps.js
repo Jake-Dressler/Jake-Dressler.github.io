@@ -19,7 +19,7 @@ export default function tilemaps() {
           <Link href="/" className='text-stone-900 font-bold underline pb-4'>Return Home</Link>
           <p className="text-3xl">2D Tilemap Searches</p>
           <p className="">I made these demonstrations as a brush up on data structures and algorithms, and as a practice in using JavaScript componenets in NextJS.
-          The "maze" is randomly generated and two random points are chosen as the start(red) and goal(purple) points. I really like random/procedural generation, so instead of preparing a guarenteed win I have the algorithm handle the case where a path cannot be found.
+          The maze is randomly generated and two random points are chosen as the start(red) and goal(purple) points. I really like random/procedural generation, so instead of preparing a guarenteed win I have the algorithm handle the case where a path cannot be found.
           This allows the generation to stay random, and even if a path is not found, the program still draws the search as it was calculated.
           </p>
         </div>
