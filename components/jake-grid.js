@@ -63,7 +63,6 @@ class jakeGrid extends React.Component {
           <div className='justify-center flex pt-4'>
             <Image priority src="/images/docker.png" className='mr-1 ml-1' height={75} width={75} alt=""></Image>
             <Image priority src="/images/github.svg" className='mr-1 ml-1' height={75} width={75} alt=""></Image>
-            <Image priority src="/images/placeholder_icon.png" className='mr-1 ml-1' height={75} width={75} alt=""></Image>
           </div>
         </div>
 

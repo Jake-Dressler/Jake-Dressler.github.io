@@ -4,7 +4,7 @@ export default function intro() {
     return (
         <div className="flex justify-center items-center w-auto h-auto font-mono">
             <div className="flex w-48 min-h-56 relative">
-                <img src="/images/placeholder_icon.png" alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                <img src="/images/jake.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
             </div>
             <div className="flex-auto p-6">
                 <div className="flex flex-wrap">
